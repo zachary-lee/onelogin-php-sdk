@@ -223,6 +223,9 @@ class OneLoginClient
         if (property_exists($content, 'data')) {
             $data = $content->data;
         }
+        if (is_object($data)) {
+          return $data;
+        }
         if (count($data) == 1 && empty($data[0])) {
             return [];
         }
